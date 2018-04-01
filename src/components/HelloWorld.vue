@@ -80,34 +80,38 @@
         </a>
       </li>
     </ul>
+    <tiger-counter v-bind:start-with="this.startFrom" disabled></tiger-counter>
+    <tiger-counter v-bind:start-with="this.initialNumber"></tiger-counter>
   </div>
 </template>
 
 <script>
+// eslint-disable-next-line
+import tigerCounter from './tiger-counter.vue';
+
 export default {
   name: 'HelloWorld',
+
+  props: {
+    startFrom: {
+      type: Number,
+      default: 8.8,
+    },
+  },
+
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
+      initialNumber: 6,
     };
+  },
+  components: {
+    'tiger-counter': tigerCounter,
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+  @import './base-style.css'
 </style>
+

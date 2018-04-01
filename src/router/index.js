@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import HelloWorld from '@/components/HelloWorld';
-import FirstPage from '@/components/FirstPage';
+import tigerCounter from '@/components/tiger-counter';
 
 Vue.use(Router);
 
@@ -13,9 +13,9 @@ export default new Router({
       component: HelloWorld,
     },
     {
-      path: '/firstpage',
-      name: 'FirstPage',
-      component: FirstPage,
+      path: '/counter',
+      name: 'counter',
+      component: tigerCounter,
     },
   ],
 });
